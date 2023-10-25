@@ -31,6 +31,7 @@ mongoose.connect(process.env.URL, {
 app.post('/api/add_buyer', upload.single('screenshot'), async(req, res)=>{
     console.log(req.body);
     const buyer=new Buyer({
+        size: req.body.size,
         name: req.body.name,
         email: req.body.email,
         mobile: req.body.mobile,

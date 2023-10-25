@@ -1,6 +1,10 @@
 const mongoose = require("mongoose");
 
 const buyerSchema = new mongoose.Schema({
+  size: {
+    type: String,
+    required: true,
+  },
   name: {
     type: String,
     required: true,
