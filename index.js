@@ -49,7 +49,11 @@ app.post('/api/add_buyer', upload.single('screenshot'), async(req, res)=>{
 });
 
 
-
+app.get('/api/admin', async (req, res)=>{
+    const buyers=await Buyer.find({});
+    console.log(buyers);
+    res.send(buyers);
+});
 
 
 app.listen(process.env.PORT, ()=>{
